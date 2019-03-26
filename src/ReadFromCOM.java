@@ -16,9 +16,10 @@ public class ReadFromCOM {
         comPort.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0);
         InputStream in = comPort.getInputStream();
         try {
-            for (int j = 0; j < 10; ++j)
+            for (int j = 0; j < 10; ++j) {
                 // System.out.print((char) in.read());
                 valueFromScanner = valueFromScanner + (char) in.read();
+            }
             in.close();
         } catch (Exception e) {
             e.printStackTrace();
